@@ -1,0 +1,15 @@
+Requirements:
+- JVM 1.7 or above
+
+
+HOCCLUS2 can be run with the following syntax:
+	java -jar hocclus2.jar -alpha <alphaValue> -beta <betaValue> <inputFile>
+
+Example: 
+	java -jar hocclus2.jar -alpha 0.1 -beta 0.3 mirTarBase.txt
+
+The output file is saved in the same path with the extension .coclus (XML format).
+
+Please note that the "resources" folder is strictly required in order to run HOCCLUS2 and should not deleted, renamed or moved.
+
+

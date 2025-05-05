@@ -1,0 +1,34 @@
+Requirements:
+- JVM 1.6 or above
+- Metis 5.0 or above
+
+METIS must be installed in the system. You can download it from http://dl.dropbox.com/u/8633823/coclustering/metis-5.0.tar.gz
+To install METIS, just run this commands in a terminal:
+	sudo make config
+	sudo make 
+	sudo make install
+
+Please note:
+	- cmake>=2.8 and g++ must be installed in the system in order to compile METIS.
+	- METIS source path must not contain any blank character, in order to avoid cmake compilation errors.
+
+
+How to run HOCCLUS:
+HOCCLUS can be run with the following syntax:
+java -jar hocclus.jar [options] -alpha <qualityThreshold> <inputFile>
+
+Options:
+	-q <compactness(default)|jaccard>	Specify the quality function
+
+	-d <mirnamap(default)|sparsematrix>	Specify the format of the input dataset
+		mirnamap: miRNAMap format
+		sparsematrix: sparse matrix format (used for synthetic datasets). Each row consists of: "row object id" <TAB> "column object id" <TAB> "value"
+
+  	-stats <referenceResults>    Calculate results info (precision, recall, etc). <referenceResults> is a file containing the ground truth.
+
+	-alpha <qualityThreshold> (mandatory)	 Specifies the quality threshold, that must be between 0 and 1.
+	
+
+We also provide the real dataset (dataset.zip) and the synthetic datasets (SyntheticDataset.zip) we used for the experiments reported in the paper.
+Please note that any METIS version >= 5.0 can be used, whose the latest version can be downloaded at: http://glaros.dtc.umn.edu/gkhome/metis/metis/download 
+However, experiments have been performed with METIS version 5.0.0, which is the version we suggest to use for replicating experiments.
